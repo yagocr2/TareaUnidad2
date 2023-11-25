@@ -2,6 +2,8 @@ package com.example.tareaunidad2.viewmodel;
 
 import androidx.lifecycle.ViewModel;
 
+import java.util.Date;
+
 public class TareaViewModel extends ViewModel {
     private String titulo;
     private String fechaCreacion;

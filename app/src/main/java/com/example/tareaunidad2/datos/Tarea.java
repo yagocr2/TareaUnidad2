@@ -70,8 +70,9 @@ public class Tarea implements Parcelable {
         Tarea.contador = contador;
     }
 
-    public Date getFechaCreacion() {
-        return fechaCreacion;
+    public String getFechaCreacion() {
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
+        return sdf.format(fechaCreacion);
     }
 
     public void setFechaCreacion(String fechaCreacion) {

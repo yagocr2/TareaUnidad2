@@ -36,7 +36,7 @@ public class Fragmento1 extends Fragment {
     private OnBotonSiguienteClickListener listenerSiguienteEnActividad;
 
     public interface OnBotonCancelarCLickListener{
-        void onBotonCancelarClickListener();
+        void onBotonCancelarClicked();
     }
 
     private OnBotonCancelarCLickListener listenerCancelarEnActividad;
@@ -124,7 +124,7 @@ public class Fragmento1 extends Fragment {
         cancelar.setOnClickListener(v -> {
             //Llamamos al método onBotonCancelarClicked que está implementado en la actividad.
             if (listenerCancelarEnActividad != null) {
-                listenerCancelarEnActividad.onBotonCancelarClickListener();
+                listenerCancelarEnActividad.onBotonCancelarClicked();
             }
         });
         progreso = view.findViewById(R.id.spProgreso);

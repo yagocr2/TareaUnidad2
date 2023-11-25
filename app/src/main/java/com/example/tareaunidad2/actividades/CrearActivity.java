@@ -56,7 +56,7 @@ public class CrearActivity  extends AppCompatActivity implements
     }
 
     @Override
-    public void onBotonCancelarClickListener() {
+    public void onBotonCancelarClicked() {
         Intent aListado = new Intent();
         //Indicamos en el resultado que ha sido cancelada la actividad
         setResult(RESULT_CANCELED, aListado);
