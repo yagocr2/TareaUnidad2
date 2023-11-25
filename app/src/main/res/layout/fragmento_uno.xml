@@ -13,7 +13,7 @@
         android:layout_marginTop="90dp"
         android:layout_marginEnd="30dp"
         android:text="Titulo de la tarea"
-        app:layout_constraintEnd_toStartOf="@+id/dFechaCreacion"
+        app:layout_constraintEnd_toStartOf="@+id/etTitulo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -60,10 +60,10 @@
         android:ems="10"
         android:inputType="date"
         app:layout_constraintStart_toEndOf="@+id/textView4"
-        app:layout_constraintTop_toBottomOf="@+id/dFechaCreacion" />
+        app:layout_constraintTop_toBottomOf="@+id/etTitulo" />
 
     <EditText
-        android:id="@+id/dFechaCreacion"
+        android:id="@+id/etTitulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="29dp"

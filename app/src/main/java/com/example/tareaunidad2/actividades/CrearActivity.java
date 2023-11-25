@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 
 import com.example.tareaunidad2.R;
+import com.example.tareaunidad2.viewmodel.TareaViewModel;
 
 public class CrearActivity  extends AppCompatActivity{
     private TareaViewModel tareaViewModel;
