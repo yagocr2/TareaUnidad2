@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity{
     }
 
     private void empezar(View v){
-        Intent aEmpezar = new Intent(this, ListadoTareasActivity.class);
+        Intent aEmpezar = new Intent(this, ListadoTareas.class);
         startActivity(aEmpezar);
     }
 }

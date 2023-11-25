@@ -38,7 +38,7 @@ public class Fragmento2 extends Fragment {
     private Fragmento2.OnBotonVolverClickListener listenerVolverEnActivity;
 
     // Constructor privado para evitar instanciación sin parámetros.
-    private Fragmento2() {}
+    public Fragmento2() {}
 
     // Método llamado cuando el fragmento se adjunta a la actividad.
     @Override

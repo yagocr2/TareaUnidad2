@@ -128,7 +128,7 @@ public class Fragmento1 extends Fragment {
             }
         });
         progreso = view.findViewById(R.id.spProgreso);
-        String[] progresos = requireContext().getResources().getStringArray(R.array.spProgreso);
+        String[] progresos = requireContext().getResources().getStringArray(R.array.progreso_texto);
         ArrayAdapter<String> adaptadorProgreso = new ArrayAdapter<>(getContext(), android.R.layout.simple_list_item_1, progresos);
         adaptadorProgreso.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         progreso.setAdapter(adaptadorProgreso);

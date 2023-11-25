@@ -2,19 +2,21 @@
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
+
+
     <item
         android:id="@+id/item_add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:icon="@drawable/baseline_add_task_24"
-        android:title="@string/item_crear_tarea"
+        android:icon="@drawable/agregar"
+        android:title="crear tarea"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/item_priority"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:icon="@drawable/baseline_star_outline_24_crossed"
-        android:title="Prioridad"
+        android:icon="@drawable/favorito"
+        android:title="prioritarias"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/item_about"
@@ -25,6 +27,5 @@
         android:id="@+id/item_exit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:icon="@drawable/baseline_add_task_24"
         android:title="Salir" />
 </menu>
