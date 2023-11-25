@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">TareaUnidad2</string>
+    <string name="no_hay_tareas_disponibles">No hay tareas disponibles</string>
+    <string name="titulo_de_la_tarea">Titulo de la tarea</string>
+    <string name="dd_mm_yyyy">dd/mm/yyyy</string>
+    <string name="quedan">Quedan</string>
+    <string name="_00">00</string>
+    <string name="dias">dias</string>
+</resources>
