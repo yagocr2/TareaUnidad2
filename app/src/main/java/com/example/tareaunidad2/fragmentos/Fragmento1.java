@@ -90,7 +90,6 @@ public class Fragmento1 extends Fragment {
             SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
             fechaCreacion.setText(formato.format(fechaActual));
         }
-
         fechaObjetivo = view.findViewById(R.id.dFechaObjetivo);
         fechaObjetivo.setOnClickListener(this::listenerFecha);
         @Nullable String target_date = tareaViewModel.getFechaObjetivo();
@@ -103,21 +102,10 @@ public class Fragmento1 extends Fragment {
         }
 
         //Binding, config y set Spinner Progreso
-        progreso = view.findViewById(R.id.spProgreso);
-        String[] progresos = requireContext().getResources().getStringArray(R.array.progreso_texto);
-        ArrayAdapter<String> adaptadorProgreso = new ArrayAdapter<>(getContext(), android.R.layout.simple_list_item_1, progresos);
-        adaptadorProgreso.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        progreso.setAdapter(adaptadorProgreso);
-        int progress = tareaViewModel.getProgreso();
-        progreso.setSelection(progress/25); //Situamos el spinner en la posición calculada como progreso/25
 
-        //Binding y set CheckBox Prioritaria
-        prioritaria = view.findViewById(R.id.cb_prioritaria);
-        boolean prior = tareaViewModel.isPrioritaria();
-        prioritaria.setChecked(prior);
 
         //Binding y config Button Siguiente
-        Button siguiente = view.findViewById(R.id.bt_siguiente);
+        Button siguiente = view.findViewById(R.id.btSiguiente);
         siguiente.setOnClickListener(v -> {
             //Escribimos en el ViewModel
             tareaViewModel.setTitulo(titulo.getText().toString());
@@ -125,27 +113,38 @@ public class Fragmento1 extends Fragment {
             tareaViewModel.setFechaObjetivo(fechaObjetivo.getText().toString());
             tareaViewModel.setProgreso(25 * progreso.getSelectedItemPosition());
             tareaViewModel.setPrioritaria(prioritaria.isChecked());
-
             //Llamamos al método onBotonSiguienteClicked que está implementado en la actividad.
-            if (escuchadorSiguienteEnActivity != null) {
-                escuchadorSiguienteEnActivity.onBotonSiguienteClicked();
+            if (listenerSiguienteEnActividad != null) {
+                listenerSiguienteEnActividad.onBotonSiguienteClicked();
             }
         });
 
         //Binding y config Button Cancelar
-        Button cancelar = view.findViewById(R.id.bt_cancelar);
+        Button cancelar = view.findViewById(R.id.btnCancelar);
         cancelar.setOnClickListener(v -> {
             //Llamamos al método onBotonCancelarClicked que está implementado en la actividad.
-            if (escuchadorCancelarEnActivity != null) {
-                escuchadorCancelarEnActivity.onBotonCancelarClicked();
+            if (listenerCancelarEnActividad != null) {
+                listenerCancelarEnActividad.onBotonCancelarClickListener();
             }
         });
+        progreso = view.findViewById(R.id.spProgreso);
+        String[] progresos = requireContext().getResources().getStringArray(R.array.spProgreso);
+        ArrayAdapter<String> adaptadorProgreso = new ArrayAdapter<>(getContext(), android.R.layout.simple_list_item_1, progresos);
+        adaptadorProgreso.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        progreso.setAdapter(adaptadorProgreso);
+        int progress = tareaViewModel.getProgreso();
+        progreso.setSelection(progress/25); //Situamos el spinner en la posición calculada como progreso/25
+
+        //Binding y set CheckBox Prioritaria
+        prioritaria = view.findViewById(R.id.chbPrioridad);
+        boolean prior = tareaViewModel.isPrioritaria();
+        prioritaria.setChecked(prior);
     }
     private void listenerFecha(View view){
         DatePickerFragment newFragment = DatePickerFragment.newInstance(new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker datePicker, int anno, int mes, int dia) {
-                // mes+1 porque Enero es 0
+                // mes+1 ya que Enero es 0
                 final String selectedDate = String.format("%02d/%02d/%04d",dia,(mes+1),anno);
                 ((EditText)view).setText(selectedDate);
             }

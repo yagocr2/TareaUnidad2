@@ -2,7 +2,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@drawable/borde_background"
+    android:elevation="10dp"
+    android:layout_marginTop="10dp">
     <LinearLayout
         android:id="@+id/elemento_primera_fila_linear"
         android:layout_width="match_parent"
@@ -10,7 +13,7 @@
         android:orientation="horizontal">
 
         <ImageView
-            android:id="@+id/imgImagenElemento"
+            android:id="@+id/elemento_iv_estrella"
             android:layout_width="36dp"
             android:layout_height="36dp"
             android:contentDescription="@string/elemento_iv_descripcion"
@@ -18,8 +21,8 @@
 
         <TextView
             android:id="@+id/tvTituloElemento"
-            android:layout_width="match_parent"
-            android:layout_height="36dp"
+            android:layout_width="366dp"
+            android:layout_height="match_parent"
             android:layout_marginStart="8dp"
             android:gravity="start|center_vertical"
             android:text="@string/titulo_de_la_tarea" />
